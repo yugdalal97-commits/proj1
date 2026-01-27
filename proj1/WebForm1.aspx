@@ -17,6 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <h2>Register Nigga</h2>
             <table>
                 <tr>
                     <td>
@@ -67,8 +68,8 @@
                     
                 </tr>
                 <tr>
-                    <td colspan="2" style="align-content:center">
-                        <asp:Button ID="btn_sub" runat="server" Text="Submit" />
+                    <td colspan="2">
+                        <asp:Button ID="btn_sub" runat="server" Text="Submit"/>
                     </td>
                 </tr>
             </table>
