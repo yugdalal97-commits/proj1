@@ -13,5 +13,10 @@ namespace proj1
         {
 
         }
+
+        protected void btn_sub_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
