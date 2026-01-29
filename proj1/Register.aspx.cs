@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -14,10 +16,6 @@ namespace proj1
 
         }
 
-        protected void btn_sub_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void ddl_state_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -62,6 +60,54 @@ namespace proj1
         protected void ddl_city_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btn_submit_Click(object sender, EventArgs e)
+        {
+            // 1. Get Connection String
+            string connStr = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+
+            // 2. SQL Query
+            // Note: We skip 'uid' assuming it is set to "Identity Specification = Yes" in the database design
+            string query = "INSERT INTO user_tbl (full_name, email, pass, state, city) VALUES (@full_name, @email, @pass, @state, @city)";
+
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // 3. Bind Parameters to prevent errors and hacks
+                    cmd.Parameters.AddWithValue("@full_name", tb_name.Text);
+                    cmd.Parameters.AddWithValue("@email", tb_email.Text);
+                    cmd.Parameters.AddWithValue("@pass", tb_pass.Text);
+
+                    cmd.Parameters.AddWithValue("@state", ddl_state.SelectedItem.Text);
+                    cmd.Parameters.AddWithValue("@city", ddl_city.SelectedItem.Text);
+
+
+
+                    conn.Open();
+                    int result = cmd.ExecuteNonQuery();
+
+                    if (result > 0)
+                    {
+                        lbl_message.Text = "Registered Successfully!";
+                        lbl_message.ForeColor = System.Drawing.Color.Green;
+
+                        // Optional: Clear fields
+                        tb_name.Text = "";
+                        tb_email.Text = "";
+                        tb_pass.Text = "";
+                        ddl_state.SelectedIndex = 0;
+                        // Clear city dropdown if needed
+                        Response.Redirect("Login.aspx");
+                    }
+                    else
+                    {
+                        lbl_message.Text = "Registration failed.";
+                        lbl_message.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+            }
         }
     }
 }
