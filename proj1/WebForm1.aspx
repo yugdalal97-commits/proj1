@@ -76,7 +76,8 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="btn_sub" runat="server" Text="Submit" OnClick="btn_sub_Click"/>
+                            <asp:Button ID="btn_submit" runat="server" Text="Submit" OnClick="btn_submit_Click" />
+                            <asp:Label ID="lbl_message" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
             </table>
