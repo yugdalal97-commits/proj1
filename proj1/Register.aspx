@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="proj1.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="proj1.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -14,11 +14,11 @@
         }
     </style>
 </head>
-<body>
+<body style="text-align:center;">
     <form id="form1" runat="server">
         <div>
-            <h2>Register Nigga</h2>
-            <table>
+            <h2 >Register</h2>
+            <table style="margin:auto;">
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="Full Name :"></asp:Label>
@@ -52,7 +52,13 @@
                         <asp:Label ID="Label4" runat="server" Text="State :"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddl_state" runat="server">
+                        <asp:DropDownList ID="ddl_state" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_state_SelectedIndexChanged">
+                            <asp:ListItem>Select</asp:ListItem>
+                            <asp:ListItem>Gujarat</asp:ListItem>
+                            <asp:ListItem>Maharashtra</asp:ListItem>
+                            <asp:ListItem>Tamil Nadu</asp:ListItem>
+                            <asp:ListItem>Rajasthan</asp:ListItem>
+                            <asp:ListItem>Himachal Pradesh</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     
@@ -62,7 +68,8 @@
                         <asp:Label ID="Label5" runat="server" Text="City :"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddl_city" runat="server">
+                        <asp:DropDownList ID="ddl_city" runat="server" AppendDataBoundItems="True" AutoPostBack="True" OnSelectedIndexChanged="ddl_city_SelectedIndexChanged">
+                            <asp:ListItem>Select State</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     
