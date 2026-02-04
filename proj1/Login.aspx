@@ -41,6 +41,7 @@
     </td>
 </tr>
     </table>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:chstring %>" ProviderName="<%$ ConnectionStrings:chstring.ProviderName %>" SelectCommand="SELECT [SalesDate], [Quantity] FROM [sales_tbl]"></asp:SqlDataSource>
     </form>
 </body>
 </html>

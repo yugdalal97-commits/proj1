@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Web.ApplicationServices;
 
 
 namespace proj1
@@ -33,6 +34,7 @@ namespace proj1
             {
                 lbl_message.Text = "LOGGED EEEN";
                 lbl_message.ForeColor = System.Drawing.Color.Green;
+                Session["user"] = txt_lemail.Text.Trim();
             }
             else
             {
