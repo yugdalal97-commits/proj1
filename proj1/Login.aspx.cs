@@ -34,7 +34,8 @@ namespace proj1
             {
                 lbl_message.Text = "LOGGED EEEN";
                 lbl_message.ForeColor = System.Drawing.Color.Green;
-                Session["user"] = txt_lemail.Text.Trim();
+                Session["user"] = txt_lemail.Text.Trim(); //SESSION INI
+                Response.Redirect("home.aspx");
             }
             else
             {
