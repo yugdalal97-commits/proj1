@@ -10,6 +10,12 @@
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lbl_sess" runat="server"></asp:Label>
+            <br />
+            <br />
+            <asp:FileUpload ID="FileUpload1" runat="server" />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Button" />
         </div>
     </form>
 </body>
