@@ -16,7 +16,12 @@ namespace proj1
             // This only runs ONCE when the website starts
             if (!PythonEngine.IsInitialized)
             {
-                Runtime.PythonDLL = @"C:\Users\Admin\AppData\Local\Programs\Python\Python314\python314.dll";
+                Runtime.PythonDLL = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\python312.dll";
+                // Replace 'YourUsername' with your actual PC name
+                string pythonHome = @"C:\Users\Admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages";
+
+                // Add this to the Python Search Path
+                PythonEngine.PythonPath = PythonEngine.PythonPath + ";" + pythonHome;
                 PythonEngine.Initialize();
                 PythonEngine.BeginAllowThreads(); // This is vital for web threading
             }
