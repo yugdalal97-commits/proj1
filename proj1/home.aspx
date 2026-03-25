@@ -15,7 +15,14 @@
             <asp:FileUpload ID="FileUpload1" runat="server" />
             <br />
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="Button1" runat="server" Text="Upload CSV" OnClick="Button1_Click" />
+            <br />
+            <br />
+            <asp:Button ID="analy" runat="server" Text="Analyze" OnClick="analy_Click"/>
+            <br />
+            <br />
+            <asp:Image ID="Image1" runat="server" />
+            <br />
         </div>
     </form>
 </body>
