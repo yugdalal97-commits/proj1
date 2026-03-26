@@ -17,7 +17,7 @@ namespace proj1
 
         protected void Button1_Click(System.Object sender, System.EventArgs e)
         {
-            string path = @"D:\nethan\proj1\proj1\uploads\";
+            string path = Server.MapPath("~/uploads/");
 
             if (FileUpload1.HasFile)
             {
