@@ -18,10 +18,19 @@
             <asp:Button ID="Button1" runat="server" Text="Upload CSV" OnClick="Button1_Click" />
             <br />
             <br />
-            <asp:Button ID="analy" runat="server" Text="Analyze" OnClick="analy_Click"/>
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
             <br />
             <br />
-            <asp:Image ID="Image1" runat="server" />
+            <asp:Chart ID="Chart1" runat="server">
+                <Series>
+                    <asp:Series Name="Series1" ChartType="Column" XValueMember="Item" YValueMembers="Sales"></asp:Series>
+                </Series>
+                <ChartAreas>
+                    <asp:ChartArea Name="ChartArea1">
+                    </asp:ChartArea>
+                </ChartAreas>
+            </asp:Chart>
             <br />
         </div>
     </form>
