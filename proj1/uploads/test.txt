@@ -1,6 +1,0 @@
-Game,AverageFPS
-Valorant,240
-Assetto Corsa,120
-Minecraft,165
-ARC Raiders,90
-F1 25,110

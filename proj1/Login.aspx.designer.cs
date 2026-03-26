@@ -24,15 +24,6 @@ namespace proj1
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lbl_lemail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_lemail;
-
-        /// <summary>
         /// txt_lemail control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace proj1
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_lemail;
-
-        /// <summary>
-        /// lbl_lpass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_lpass;
 
         /// <summary>
         /// txt_lpass control.

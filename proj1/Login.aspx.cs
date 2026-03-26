@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-using System.Web.ApplicationServices;
 
 
 namespace proj1
@@ -21,7 +20,7 @@ namespace proj1
 
         protected void btn_sub_Click(object sender, EventArgs e)
         {
-            string conn = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+            string conn = ConfigurationManager.ConnectionStrings["chstring"].ConnectionString;
             string query = "SELECT COUNT(*) FROM user_tbl WHERE email=@mail AND pass=@pass";
             SqlConnection con = new SqlConnection(conn);
             con.Open();

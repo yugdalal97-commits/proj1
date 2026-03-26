@@ -65,7 +65,7 @@ namespace proj1
         protected void btn_submit_Click(object sender, EventArgs e)
         {
             // 1. Get Connection String
-            string connStr = ConfigurationManager.ConnectionStrings["MyDbConnection"].ConnectionString;
+            string connStr = ConfigurationManager.ConnectionStrings["chstring"].ConnectionString;
 
             // 2. SQL Query
             // Note: We skip 'uid' assuming it is set to "Identity Specification = Yes" in the database design
