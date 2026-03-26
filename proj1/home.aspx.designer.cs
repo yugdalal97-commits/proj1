@@ -60,12 +60,30 @@ namespace proj1
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Chart1 control.
+        /// xAxis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
+        protected global::System.Web.UI.WebControls.DropDownList xAxis;
+
+        /// <summary>
+        /// yAxis control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList yAxis;
+
+        /// <summary>
+        /// timeGroup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList timeGroup;
     }
 }

@@ -1,0 +1,6 @@
+Item,Sales,Region,Season
+RTX 4060 GPU,45,North
+Intel i5 CPU,60,East
+16GB RAM Kit,120,East
+1TB NVMe SSD,95,South
+750W Power Supply,55,North

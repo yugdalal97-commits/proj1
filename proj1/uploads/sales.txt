@@ -1,6 +1,0 @@
-Item,Sales
-RTX 4060 GPU,45
-Intel i5 CPU,60
-16GB RAM Kit,120
-1TB NVMe SSD,95
-750W Power Supply,55
