@@ -86,7 +86,7 @@ namespace proj1
                 {
                     string fullPath = path + str;
                     FileUpload1.SaveAs(fullPath);
-                    lbl_sess.Text = "File uploaded successfully!";
+                    lbl_fileup.Text = "File uploaded successfully!";
 
                     try
                     {                        
@@ -108,12 +108,12 @@ namespace proj1
                     }
                     catch (Exception ex)
                     {
-                        lbl_sess.Text = $"Error processing file: {ex.Message}";
+                        lbl_fileup.Text = $"Error processing file: {ex.Message}";
                     }
                 }
                 else
                 {
-                    lbl_sess.Text = "Please upload a valid .csv or .txt file.";
+                    lbl_fileup.Text = "Please upload a valid .csv or .txt file.";
                 }
             }
             ClientScript.RegisterStartupScript(this.GetType(), "loadChart", "loadChart();", true);

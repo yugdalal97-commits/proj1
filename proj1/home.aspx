@@ -20,7 +20,7 @@
             font-size: 20px;
             font-weight: 600;
             letter-spacing: 0.5px;
-            text-align: center; /* centers text cleanly */
+            text-align: center; 
         }
 
         /* Layout */
@@ -39,9 +39,9 @@
             transition: 0.2s;
         }
 
-            .card:hover {
-                transform: translateY(-2px);
-            }
+        .card:hover {
+            transform: translateY(-2px);
+        }
 
         .title {
             font-size: 20px;
@@ -78,9 +78,9 @@
             transition: 0.2s;
         }
 
-            .file-label:hover {
-                background: #e2e8f0;
-            }
+        .file-label:hover {
+            background: #e2e8f0;
+        }
 
         .file-input {
             display: none;
@@ -98,33 +98,36 @@
             font-weight: 500;
         }
 
-            .btn:hover {
-                background: #1d4ed8;
-            }
+        .btn:hover {
+            background: #1d4ed8;
+        }
 
         /* Grid */
         .gridview {
             width: 100%;
             border-collapse: collapse;
             border-radius: 8px;
-            overflow: hidden;
+            display: block;
+            max-height: 400px;
+            overflow-x: auto;
+            overflow-y: auto;
         }
 
-            .gridview th {
-                background: #2563eb;
-                color: white;
-                padding: 12px;
-                text-align: left;
-            }
+        .gridview th {
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
 
-            .gridview td {
-                padding: 10px;
-                border-bottom: 1px solid #e5e7eb;
-            }
+        .gridview td {
+            padding: 10px;
+            border-bottom: 1px solid #e5e7eb;
+        }
 
-            .gridview tr:hover {
-                background: #f9fafb;
-            }
+        .gridview tr:hover {
+            background: #f9fafb;
+        }
 
         /* Chart */
         .chart-container {
@@ -150,12 +153,12 @@
             min-width: 180px;
         }
 
-            .dropdown-group label {
-                font-size: 13px;
-                margin-bottom: 5px;
-                color: #475569;
-                font-weight: 500;
-            }
+        .dropdown-group label {
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #475569;
+            font-weight: 500;
+        }
 
         /* Dropdown styling */
         .dropdown {
@@ -167,12 +170,12 @@
             transition: 0.2s;
         }
 
-            .dropdown:focus {
-                outline: none;
-                border-color: #2563eb;
-                background: white;
-                box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
-            }
+        .dropdown:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: white;
+            box-shadow: 0 0 0 2px rgba(37,99,235,0.15);
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -225,7 +228,7 @@
                         </label>
                         <asp:Button ID="Button1" runat="server" Text="Upload CSV" CssClass="btn" OnClick="Button1_Click" />
                     </div>
-                    <asp:Label ID="lbl_sess" runat="server" CssClass="session-label"></asp:Label>
+                    <asp:Label ID="lbl_fileup" runat="server" CssClass="session-label"></asp:Label>
                 </div>
             </div>
             <div class="card">
@@ -237,23 +240,19 @@
                 <div class="dropdown-row">
                     <div class="dropdown-group">
                         <label>X Axis</label>
-                        <asp:DropDownList ID="xAxis" runat="server" CssClass="dropdown"></asp:DropDownList>
+                        <asp:DropDownList ID="xAxis" runat="server" CssClass="dropdown" onchange="loadChart()"></asp:DropDownList>
                     </div>
                     <div class="dropdown-group">
                         <label>Y Axis</label>
-                        <asp:DropDownList ID="yAxis" runat="server" CssClass="dropdown"></asp:DropDownList>
+                        <asp:DropDownList ID="yAxis" runat="server" CssClass="dropdown" onchange="loadChart()"></asp:DropDownList>
                     </div>
                     <div class="dropdown-group">
                         <label>Time Group</label>
-                        <asp:DropDownList ID="timeGroup" runat="server" CssClass="dropdown">
+                        <asp:DropDownList ID="timeGroup" runat="server" CssClass="dropdown" onchange="loadChart()">
                             <asp:ListItem Text="All" Value="None" />
                             <asp:ListItem Text="Monthly" Value="Monthly" />
                             <asp:ListItem Text="Yearly" Value="Yearly" />
                         </asp:DropDownList>
-                    </div>
-                    <div class="dropdown-group">
-                        <label>&nbsp;</label>
-                        <button type="button" class="btn" onclick="loadChart()">Update</button>
                     </div>
                 </div>
             </div>
